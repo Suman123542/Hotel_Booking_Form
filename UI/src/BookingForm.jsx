@@ -59,7 +59,7 @@ export default function BookingForm() {
 
     try {
       setLoading(true);
-      await axios.post("http://localhost:5000/booking", form);
+      await axios.post("https://hotel-booking-form-01ol.onrender.com", form);
       setConfirmed(true);
     } catch (error) {
       alert(error.response?.data?.message || "Booking failed");
@@ -146,7 +146,9 @@ export default function BookingForm() {
         <div>
           <h3 className="text-lg font-semibold mb-4">Stay Information</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label for="checkin" className="font-semibold">Check-in Date</label>
             <input type="date" className="border p-3 rounded-lg" name="checkInDate" onChange={handleChange} />
+            <label for="checkin" className="font-semibold">Check-out Date</label>
             <input type="date" className="border p-3 rounded-lg" name="checkOutDate" onChange={handleChange} />
             <select className="border p-3 rounded-lg" name="roomType" onChange={handleChange}>
               <option value="">Select Room Type</option>

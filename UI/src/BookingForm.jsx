@@ -59,7 +59,7 @@ export default function BookingForm() {
 
     try {
       setLoading(true);
-      await axios.post("https://hotel-booking-form-01ol.onrender.com", form);
+      await axios.post("https://hotel-booking-form-01ol.onrender.com/booking", form);
       setConfirmed(true);
     } catch (error) {
       alert(error.response?.data?.message || "Booking failed");
